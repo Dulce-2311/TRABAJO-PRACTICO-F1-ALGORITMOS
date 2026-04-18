@@ -2,7 +2,7 @@ package proyecto.modelo;
 
 import java.util.List;
 
-public class GestorZonas {
+public class GestorZonas<T extends Comparable<T>> {
     private Paquete<T>[][] matriz;
     private int zonas;
     private int paquetesPorZona;
