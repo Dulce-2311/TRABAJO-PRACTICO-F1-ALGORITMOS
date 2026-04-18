@@ -34,6 +34,9 @@ public class GestorZonas {
             System.out.println();
         }
     } 
-       
+    
+    public Paquete<T>[][] getMatriz() {
+    return matriz;
+}   
 
 }
