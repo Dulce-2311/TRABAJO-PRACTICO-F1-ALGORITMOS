@@ -1,5 +1,7 @@
 package proyecto.modelo;
 
+import java.util.List;
+
 public class GestorZonas {
     private Paquete<T>[][] matriz;
     private int zonas;
@@ -10,5 +12,16 @@ public class GestorZonas {
         this.paquetesPorZona = paquetesPorZona;
         matriz = new Paquete[zonas][paquetesPorZona];
     }
-    
+    public void cargarPaquetes(List<Paquete<T>> lista) {
+        int[] contador = new int[zonas];
+
+        for (Paquete<T> p : lista) {
+            int zona = p.getZona() - 1;
+
+            if (contador[zona] < paquetesPorZona) {
+                matriz[zona][contador[zona]] = p;
+                contador[zona]++;
+            }
+        }
+    }    
 }
