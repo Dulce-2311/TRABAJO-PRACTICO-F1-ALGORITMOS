@@ -23,10 +23,33 @@ public class LectorArchivo {
 
             String linea;
 
-        } catch (IOException e) {
-            System.out.println("Error al leer el archivo: " + e.getMessage());
+            capacidad = Integer.parseInt(br.readLine().split("=")[1]);
+            zonas = Integer.parseInt(br.readLine().split("=")[1]);
+            paquetesPorZona = Integer.parseInt(br.readLine().split("=")[1]);
+        br.readLine(); // saltar encabezado
+
+        while ((linea = br.readLine()) != null) {
+            String[] datos = linea.split(",");
+
+            String codigo = datos[0];
+            double peso = Double.parseDouble(datos[1]);
+            String prioridad = datos[2];
+            int valorizacion = Integer.parseInt(datos[3]);
+            int zona = Integer.parseInt(datos[4]);
+
+            Paquete<String> paquete = new Paquete<>(
+                    codigo, peso, prioridad, valorizacion, zona
+            );
+
+            listaPaquetes.add(paquete);
         }
-    }    
+
+     } catch (IOException e) {
+         System.out.println("Error al leer el archivo: " + e.getMessage());
+     }
+ }
+    
+    
 
 
 }
