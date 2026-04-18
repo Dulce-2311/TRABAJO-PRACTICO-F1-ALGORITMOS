@@ -23,5 +23,17 @@ public class GestorZonas {
                 contador[zona]++;
             }
         }
-    }    
+    }
+
+    public void mostrarMatriz() {
+        for (int i = 0; i < zonas; i++) {
+            System.out.println("Zona " + (i + 1) + ":");
+            for (int j = 0; j < paquetesPorZona; j++) {
+                System.out.println(matriz[i][j]);
+            }
+            System.out.println();
+        }
+    } 
+       
+
 }
