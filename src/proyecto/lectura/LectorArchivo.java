@@ -48,6 +48,22 @@ public class LectorArchivo {
          System.out.println("Error al leer el archivo: " + e.getMessage());
      }
  }
+ 
+public int getCapacidad() {
+    return capacidad;
+}
+
+public int getZonas() {
+    return zonas;
+}
+
+public int getPaquetesPorZona() {
+    return paquetesPorZona;
+}
+
+public ArrayList<Paquete<String>> getListaPaquetes() {
+    return listaPaquetes;
+}
     
     
 
